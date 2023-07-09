@@ -4,24 +4,24 @@
 *{ font-family: 'Unbounded', helvetica; }
 	 
 .item-r {   
-	height: 400px;  
+	min-height: 400px;  
 	border-bottom: solid 7px white;   
 	background-image: url("http://imgfz.com/i/biOqjld.jpeg");   
-	background-size: cover;
+	background-size: cover;  
+	background-position: top center; 
 	box-shadow: 0px 8px 4px rgba(0,0,0,0.5); 
 } 
 
 .title {  
 	margin: 0;
 	padding: 10px 0 0 10px;
-	font-weight: bold; 
 	font-size: 3vw;
 	color: white;
 }
 	
 .menu { 
-	margin: -20px 15% 0 15%;
-	font-size: 2.3vw; 
+	margin: -15px 5% 0 5%;
+	font-size: 1.5rem; 
 	font-weight: bold;   
 	border-radius: 30px; 
 	background-color: white; 
@@ -45,7 +45,7 @@
  
 body{
 	margin: 0; 
-	
+	background-color: gray;
 	background-attachment: fixed;
 	background-position: center center;
 	background-size: cover; 
@@ -53,63 +53,78 @@ body{
 }  
  
 
-@media only screen and (max-width:768px) {
+@media only screen and (min-width:980px) {
+	 
     body {
         background-color: blue;  
     }
 	
 	.card {   
-	font-size: .7rem;  	
+	font-size: 1.5rem;  	
+	}	  
+}
+
+@media only screen and (max-width:500px) {
+	 
+	 . menu {
+	font-size: .5rem; }
+    body {
+        background-color: red;  
+    }
+	
+	.card {   
+	font-size: 0.75rem;  	
 	}	
 }
 
-.card {  
+.card {   
+	font-family: 'Josefin Sans', Helvetica;
 	margin: 5% 3vw 5% 3vw;
 	padding: 2% 2% 3% 2%;
-	background-color: white;
-	font-size: 1.5rem;
+	background-color: white; 
 	border-radius: 20px;
 	box-shadow: -6px 8px 4px rgba(0,0,0,0.5); 
 	
-}	
-
-
-.card {   
-	font-size:clamp (1.8rem, 2.5vw, 2.8rem); 
-	
-}	
+}	 
 
 .card h1 {
 	margin: 0 5vw 4% 5vw;
-	text-align: center; 
-	font-size:4vmax;
+	text-align: center;  
 	border-bottom: solid 3px red; 
 }
 
-.grid-contR,
-.grid-contL,
-.grid-contE { 
-  font-family: 'Josefin Sans', Helvetica;
-	display: grid;
-	justify-content: space-between;
-	align-items: center;
-	
+.R,
+.L{ 
+
+	display: flex; 
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex-grow: 1;
+	align-content: center;
 }	
 
-.grid-contR { grid-template-columns: 30% 64%;  }
-.grid-contL { grid-template-columns: 64% 30%;  }
-.grid-contE { grid-template-columns: auto auto auto auto;  }
-
-.grid-contE div:nth-child(2),
-.grid-contE div:nth-child(4) {
-	padding: 0 15px 0 15px; 
-	border-left: solid 2px red; 
-	border-right: solid 2px red
+	
+.E { 
+	display: flex;
+	justify-content: space-around; 
 }
  
- img {  
+
+.E div:nth-child(2),
+.E div:nth-child(4) {
+	padding: 0 5px; 
+	border-left: solid 2px red; 
+	border-right: solid 2px red;
+}
+ 
+.card .R div p,
+.card .L div p {margin:15px;}
+
+img {  
+	object-fit: cover;
 	border-radius: 20px;
-	box-shadow: -3.5px 3.5px 0 red;   
+	box-shadow: -3.5px 3.5px 0 red; 
+	max-width: 35%;
  }	
  
  footer {
